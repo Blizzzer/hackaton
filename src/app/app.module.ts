@@ -12,13 +12,19 @@ import {Configuration} from './constants';
 import { AppRoutingModule } from './/app-routing.module';
 import { AnswerComponent } from './answer/answer.component';
 import { QuestionComponent } from './question/question.component';
+import { LecturesComponent } from './lectures/lectures.component';
+import { AddLectureComponent } from './add-lecture/add-lecture.component';
+import { LecturesListComponent } from './lectures-list/lectures-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AnswerComponent,
-    QuestionComponent
+    QuestionComponent,
+    LecturesComponent,
+    AddLectureComponent,
+    LecturesListComponent
   ],
   imports: [
     NgbModule.forRoot(),
