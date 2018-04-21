@@ -13,7 +13,7 @@ export class AnswerComponent implements OnInit {
 
   ngOnInit() {
     this._dataService
-      .getAll<Answer[]>()
+      .getAll<Answer[]>('posts')
       .subscribe((data: Answer[]) => this.answers = data);
   }
 

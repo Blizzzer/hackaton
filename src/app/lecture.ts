@@ -1,6 +1,4 @@
 export class Lecture {
+  public id: string;
   public name: string;
-  public day: string;
-  public startHour: string;
-  public endHour: string;
 }

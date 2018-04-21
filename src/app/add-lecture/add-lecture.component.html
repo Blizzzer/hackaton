@@ -1,3 +1,18 @@
 <p>
   add-lecture works!
 </p>
+<div>
+  <form name = "LectureForm">
+    Nazwa: <input type="name" name="Nazwa" [(ngModel)] = "lectureToSend.name" /><br>
+    Dzień: <input type="day" name="Dzień" [(ngModel)] = "lectureToSend.day" /><br>
+    Godzina stratowa: <input type="startHour" name="Godzina startowa" [(ngModel)] = "lectureToSend.startHour" /><br>
+    Godzina końcowa: <input type="endHour" name="Godzina końcowa" [(ngModel)] = "lectureToSend.endHour" /><br>
+    <button (click)="goAdd()">Aktualizuj dane</button>
+  </form>
+  Nazwa: {{lectureToSend.name}}<br>
+  Dzień: {{lectureToSend.day}}<br>
+  Godzina stratowa: {{lectureToSend.startHour}}<br>
+  Godzina końcowa: {{lectureToSend.endHour}}<br>
+</div>
+<hr>
+<button (click)="goBack()">Back</button>

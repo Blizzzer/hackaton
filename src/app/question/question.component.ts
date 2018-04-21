@@ -13,7 +13,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this._dataService
-      .getAll<Question[]>()
+      .getAll<Question[]>('comments')
       .subscribe((data: Question[]) => this.questions = data);
   }
 
