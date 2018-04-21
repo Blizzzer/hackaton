@@ -18,6 +18,8 @@ import { AddLectureComponent } from './add-lecture/add-lecture.component';
 import { LecturesListComponent } from './lectures-list/lectures-list.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { SendQuestionListComponent } from './send-question-list/send-question-list.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { SendQuestionListComponent } from './send-question-list/send-question-li
     AddLectureComponent,
     LecturesListComponent,
     QuestionListComponent,
-    SendQuestionListComponent
+    SendQuestionListComponent,
+    AddQuestionComponent,
+    StatisticsComponent
   ],
   imports: [
     NgbModule.forRoot(),

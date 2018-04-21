@@ -17,7 +17,7 @@ export class SendQuestionListComponent implements OnInit {
     console.log('cos');
     console.log(this.lectureID);
     this._dataService
-      .getAll<Question[]>('questions?lectureId=' + this.lectureID + '&published=true')
+      .getAll<Question[]>('questions?lectureId=' + this.lectureID + '&published=1')
       .subscribe((data: Question[]) => this.questions = data);
   }
   getLecture(): void {

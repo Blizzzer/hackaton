@@ -1,6 +1,8 @@
 export class Answer {
-  public userId: string;
-  public id: string;
-  public title: string;
-  public body: string;
+  public text: string;
+  public order: number;
+  public constructor(text: string, order: number){
+    this.text = text;
+    this.order = order;
+  }
 }

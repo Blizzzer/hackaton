@@ -6,6 +6,7 @@ import {Configuration} from './constants';
 import {LectureToSend} from "./lectureToSend";
 import {RequestOptions} from "@angular/http";
 import {Lecture} from "./lecture";
+import {Question} from "./question";
 
 @Injectable()
 export class DataService {
@@ -17,15 +18,25 @@ export class DataService {
   public getAll<Answer>(urlPlace: string): Observable<Answer> {
     return this.http.get<Answer>(this.actionUrl + urlPlace);
   }
-  public post(lectureToSend: LectureToSend, urlPlace: string): Promise<LectureToSend> {
+  public postLecture(lectureToSend: LectureToSend, urlPlace: string): Promise<LectureToSend> {
     console.log(JSON.stringify(lectureToSend));
-    return this.http.post(this.actionUrl + urlPlace, JSON.stringify(lectureToSend))
+    return this.http.post(this.actionUrl + urlPlace, lectureToSend)
       .toPromise()
       .then(() => lectureToSend);
+  }
+  public postQuestion(question: Question, urlPlace: string): Promise<Question> {
+    console.log(JSON.stringify(question));
+    return this.http.post(this.actionUrl + urlPlace, question)
+      .toPromise()
+      .then(() => question);
   }
   getLecture<Lecture>(id: number, urlPlace: string): Observable<Lecture> {
     console.log(this.actionUrl + urlPlace + id);
     return this.http.get<Lecture>(this.actionUrl + urlPlace + id);
+  }
+  getQuestion<Question>(id: number, urlPlace: string): Observable<Question> {
+    console.log(this.actionUrl + urlPlace + id);
+    return this.http.get<Question>(this.actionUrl + urlPlace + id);
   }
 }
 

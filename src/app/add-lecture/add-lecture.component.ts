@@ -10,6 +10,10 @@ import {Location} from "@angular/common";
 })
 export class AddLectureComponent implements OnInit {
   public lectureToSend: LectureToSend;
+  public name: string;
+  public day: string;
+  public startHour: number;
+  public finishHour: number;
 
   constructor(private _dataService: DataService, private location: Location) {
     /*this.lectureToSend.name = 'f';
@@ -21,7 +25,9 @@ export class AddLectureComponent implements OnInit {
   ngOnInit() {
   }
   goAdd(): void {
-    this._dataService.post(this.lectureToSend, 'lectures').then(() => location);
+    this.lectureToSend = new LectureToSend(this.name,this.day,this.startHour,this.finishHour);
+    console.log(this.lectureToSend);
+    this._dataService.postLecture(this.lectureToSend, 'lectures').then(() => location);
   }
   goBack(): void {
     this.location.back();

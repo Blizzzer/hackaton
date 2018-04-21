@@ -2,17 +2,40 @@
   add-lecture works!
 </p>
 <div>
+
+
   <form name = "LectureForm">
-    Nazwa: <input type="name" name="Nazwa" [(ngModel)] = "lectureToSend.name" /><br>
-    Dzień: <input type="day" name="Dzień" [(ngModel)] = "lectureToSend.day" /><br>
-    Godzina stratowa: <input type="startHour" name="Godzina startowa" [(ngModel)] = "lectureToSend.startHour" /><br>
-    Godzina końcowa: <input type="endHour" name="Godzina końcowa" [(ngModel)] = "lectureToSend.endHour" /><br>
-    <button (click)="goAdd()">Aktualizuj dane</button>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required
+             [(ngModel)]="name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="day">Day</label>
+      <input type="text" class="form-control" id="day" required
+             [(ngModel)]="day" name="day">
+    </div>
+
+    <div class="form-group">
+      <label for="startHour">hour</label>
+      <input type="text" class="form-control" id="startHour" required
+             [(ngModel)]="startHour" name="startHour">
+    </div>
+
+    <div class="form-group">
+      <label for="finishHour">end</label>
+      <input type="text" class="form-control" id="finishHour" required
+             [(ngModel)]="finishHour" name="finishHour">
+    </div>
+
+    <button (click)="goAdd()">Dodaj wyklad</button>
   </form>
-  Nazwa: {{lectureToSend.name}}<br>
-  Dzień: {{lectureToSend.day}}<br>
-  Godzina stratowa: {{lectureToSend.startHour}}<br>
-  Godzina końcowa: {{lectureToSend.endHour}}<br>
+
+
+
 </div>
+
+
 <hr>
 <button (click)="goBack()">Back</button>

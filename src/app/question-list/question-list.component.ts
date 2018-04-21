@@ -17,7 +17,7 @@ export class QuestionListComponent implements OnInit {
     console.log('cos');
     console.log(this.lectureID);
     this._dataService
-      .getAll<Question[]>('questions?lectureId=' + this.lectureID + '&published=false')
+      .getAll<Question[]>('questions?lectureId=' + this.lectureID + '&published=0')
       .subscribe((data: Question[]) => this.questions = data);
   }
   getLecture(): void {
