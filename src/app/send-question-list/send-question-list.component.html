@@ -1,0 +1,8 @@
+<p>
+  send-question-list works!
+</p>
+<ul class="questions">
+  <li *ngFor="let question of questions">
+    <span class="badge">{{question.id}}</span> {{question.content}}
+  </li>
+</ul>

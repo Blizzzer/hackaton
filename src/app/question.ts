@@ -1,8 +1,6 @@
 export class Question {
-  public postId: string;
+  public content: string;
   public id: string;
-  public name: string;
-  public email: string;
-  public body: string;
+  public published: string;
 }
 

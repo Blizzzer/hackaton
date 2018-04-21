@@ -16,6 +16,8 @@ import { QuestionComponent } from './question/question.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { AddLectureComponent } from './add-lecture/add-lecture.component';
 import { LecturesListComponent } from './lectures-list/lectures-list.component';
+import { QuestionListComponent } from './question-list/question-list.component';
+import { SendQuestionListComponent } from './send-question-list/send-question-list.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { LecturesListComponent } from './lectures-list/lectures-list.component';
     QuestionComponent,
     LecturesComponent,
     AddLectureComponent,
-    LecturesListComponent
+    LecturesListComponent,
+    QuestionListComponent,
+    SendQuestionListComponent
   ],
   imports: [
     NgbModule.forRoot(),

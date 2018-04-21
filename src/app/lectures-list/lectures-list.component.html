@@ -3,6 +3,8 @@
 </p>
 <ul class="lectures">
   <li *ngFor="let lecture of lectures">
-    <span class="badge">{{lecture.id}}</span> {{lecture.name}}
+    <a routerLink="/lectures/{{lecture.id}}">
+    <span class="badge">{{lecture.id}}</span> {{lecture.abbreviation}}
+    </a>
   </li>
 </ul>

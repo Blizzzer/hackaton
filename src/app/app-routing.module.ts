@@ -7,9 +7,9 @@ import {LecturesComponent} from "./lectures/lectures.component";
 const routes: Routes = [
   { path: '', redirectTo: '/lectures', pathMatch: 'full' },{
   path: 'answers', component: AnswerComponent
-}, {path: 'questions', component: QuestionComponent
 },{path: 'lectures', component: LecturesComponent
-}];
+},{path: 'lectures/:id', component: QuestionComponent
+  }];
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)]
