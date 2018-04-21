@@ -12,10 +12,10 @@ export class AddLectureComponent implements OnInit {
   public lectureToSend: LectureToSend;
 
   constructor(private _dataService: DataService, private location: Location) {
-    this.lectureToSend.name = '';
-    this.lectureToSend.day = '';
-    this.lectureToSend.startHour = '';
-    this.lectureToSend.endHour = '';
+    /*this.lectureToSend.name = 'f';
+    this.lectureToSend.day = 'f';
+    this.lectureToSend.startHour = 'f';
+    this.lectureToSend.endHour = 'f';*/
   }
 
   ngOnInit() {

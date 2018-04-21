@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Configuration} from './constants';
 import {LectureToSend} from "./lectureToSend";
+import {RequestOptions} from "@angular/http";
 
 @Injectable()
 export class DataService {
@@ -16,7 +17,7 @@ export class DataService {
     return this.http.get<Answer>(this.actionUrl + urlPlace);
   }
   public post(lectureToSend: LectureToSend, urlPlace: string): Promise<LectureToSend> {
-    console.log("DataService.postLecture()");
+    console.log(JSON.stringify(lectureToSend));
     return this.http.post(this.actionUrl + urlPlace, JSON.stringify(lectureToSend))
       .toPromise()
       .then(() => lectureToSend);
