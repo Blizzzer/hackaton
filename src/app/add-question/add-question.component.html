@@ -6,39 +6,33 @@
 
   <form name = "LectureForm">
     <div class="form-group">
-      <label for="text">Text</label>
+      <label for="text">Tekst pytania</label>
       <input type="text" class="form-control" id="text" required
              [(ngModel)]="text" name="text">
     </div>
 
     <div class="form-group">
-      <label for="lectureId">LectureId</label>
-      <input type="number" class="form-control" id="lectureId" required
-             [(ngModel)]="lectureId" name="lectureId">
-    </div>
-
-    <div class="form-group">
-      <label for="firstAnswer">end</label>
+      <label for="firstAnswer">Pierwsza możliwa odpowiedz</label>
       <input type="text" class="form-control" id="firstAnswer" required
              [(ngModel)]="firstAnswer" name="firstAnswer">
     </div>
     <div class="form-group">
-      <label for="secondAnswer">secondAnswer</label>
+      <label for="secondAnswer">Druga możliwa odpowiedz</label>
       <input type="text" class="form-control" id="secondAnswer" required
              [(ngModel)]="secondAnswer" name="secondAnswer">
     </div>
     <div class="form-group">
-      <label for="thirdAnswer">thirdAnswer</label>
+      <label for="thirdAnswer">Trzecia możliwa odpowiedz</label>
       <input type="text" class="form-control" id="thirdAnswer" required
              [(ngModel)]="thirdAnswer" name="thirdAnswer">
     </div>
     <div class="form-group">
-      <label for="fourthAnswer">fourthAnswer</label>
+      <label for="fourthAnswer">Czwarta możliwa odpowiedz</label>
       <input type="text" class="form-control" id="fourthAnswer" required
              [(ngModel)]="fourthAnswer" name="fourthAnswer">
     </div>
 
-    <button (click)="goAdd()">Dodaj wyklad</button>
+    <button (click)="goAdd()">Dodaj pytanie</button>
   </form>
 
 

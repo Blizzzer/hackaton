@@ -3,7 +3,13 @@
 </p>
 <ul class="questions">
   <li *ngFor="let question of questions">
-    <span class="badge">{{question.id}}</span> {{question.content}}
+    <a>
+    <span class="badge">{{question.content}}</span>
+    </a>
+    <button class="send" title="send question"
+            (click)="send(question.id)">Send</button>
+    <button class="delete" title="delete question"
+            (click)="delete(question.id)">x</button>
   </li>
 </ul>
 

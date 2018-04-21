@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/map';
-import {HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Configuration} from './constants';
@@ -7,6 +7,11 @@ import {LectureToSend} from "./lectureToSend";
 import {RequestOptions} from "@angular/http";
 import {Lecture} from "./lecture";
 import {Question} from "./question";
+import {DownloadedQuestion} from "./downloaded-question";
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class DataService {
@@ -37,6 +42,16 @@ export class DataService {
   getQuestion<Question>(id: number, urlPlace: string): Observable<Question> {
     console.log(this.actionUrl + urlPlace + id);
     return this.http.get<Question>(this.actionUrl + urlPlace + id);
+  }
+  sendQuestion(urlPlace: string): Promise<void> {
+    console.log(this.actionUrl + urlPlace);
+    return this.http.post(this.actionUrl + urlPlace,'{}',httpOptions).toPromise()
+      .then(() => null);
+  }
+  deleteQuestion(urlPlace: string): Promise<void>{
+    console.log(this.actionUrl + urlPlace);
+    return this.http.delete(this.actionUrl + urlPlace, httpOptions).toPromise()
+      .then(() => null);
   }
 }
 
