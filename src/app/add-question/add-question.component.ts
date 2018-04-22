@@ -18,6 +18,7 @@ export class AddQuestionComponent implements OnInit {
   public secondAnswer: string;
   public thirdAnswer: string;
   public fourthAnswer: string;
+  public correctAnswer: number;
   constructor(private route: ActivatedRoute, private _dataService: DataService, private location: Location) { }
 
   ngOnInit() {
@@ -25,13 +26,16 @@ export class AddQuestionComponent implements OnInit {
   goAdd(): void {
     this.lectureId = +this.route.snapshot.paramMap.get('id');
 
-    this.question = new Question(this.text, 0,this.lectureId,this.firstAnswer,this.secondAnswer,this.thirdAnswer, this.fourthAnswer)
+    this.question = new Question(this.text, 0,this.lectureId,this.firstAnswer,this.secondAnswer,this.thirdAnswer, this.fourthAnswer, this.correctAnswer)
     console.log(this.question);
     this._dataService.postQuestion(this.question, 'questions').then(() => location);
     window.location.reload()
   }
   goBack(): void {
     this.location.back();
+  }
+  setCorrect(correct: number){
+    this.correctAnswer = correct;
   }
 
 }

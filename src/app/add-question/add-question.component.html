@@ -1,5 +1,5 @@
 
-<div class="input-group mb-3">
+<div class="input-group mb-3" style="text-align:center">
 
 
   <form name = "LectureForm">
@@ -33,6 +33,12 @@
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
       Add question
     </button>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" (click)="setCorrect(0)">First</button>
+      <button type="button" class="btn btn-secondary" (click)="setCorrect(1)">Second</button>
+      <button type="button" class="btn btn-secondary" (click)="setCorrect(2)">Third</button>
+      <button type="button" class="btn btn-secondary" (click)="setCorrect(3)">Fourth</button>
+    </div>
   </form>
 
 
