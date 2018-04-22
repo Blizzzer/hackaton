@@ -3,6 +3,8 @@ import {Question} from "../question";
 import {DataService} from "../data.service";
 import {ActivatedRoute} from "@angular/router";
 import {DownloadedQuestion} from "../downloaded-question";
+import {Statistic} from "../statistic";
+import {AnswerStatisticResponse} from "../answerStatisticResponse";
 
 
 @Component({
@@ -13,7 +15,9 @@ import {DownloadedQuestion} from "../downloaded-question";
 export class QuestionListComponent implements OnInit {
   public questions: DownloadedQuestion[];
   public lectureID: number;
-
+  public selectedQuestionId: number;
+  public statistic: Statistic;
+  public answersStatistics: AnswerStatisticResponse[];
   constructor(private route: ActivatedRoute, private _dataService: DataService) {
   }
 
@@ -40,5 +44,12 @@ export class QuestionListComponent implements OnInit {
   send(id: number) {
     console.log('questions/' + id + '/publish');
     this._dataService.sendQuestion('questions/' + id + '/publish');
+  }
+  onSelect(question: DownloadedQuestion): void {
+    this.selectedQuestionId = question.id;
+    this._dataService
+      .getAll<Statistic>('questions/' + this.selectedQuestionId + '/statistics')
+      .subscribe((data: Statistic) => this.statistic = data);
+    this.answersStatistics = this.statistic.answersStatistics;
   }
 }

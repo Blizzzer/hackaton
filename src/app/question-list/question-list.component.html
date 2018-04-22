@@ -2,7 +2,7 @@
   question-list works!
 </p>
 <ul class="questions">
-  <li *ngFor="let question of questions">
+  <li *ngFor="let question of questions" (click)="onSelect(question)">
     <a>
     <span class="badge">{{question.content}}</span>
     </a>
@@ -12,4 +12,15 @@
             (click)="delete(question.id)">x</button>
   </li>
 </ul>
+<div *ngIf="statistic">
+  <h2>{{ statistic.text | uppercase }} Details</h2>
+  <div><span>NumberOfAnswers: </span>{{statistic.answersCount}}</div>
+</div>
 
+<ul class="answersStatistics">
+  <li *ngFor="let answersStatistic of answersStatistics">
+    <a>
+      <span class="badge">{{answersStatistic.numberOfAnswers}}</span>
+    </a>
+  </li>
+</ul>
