@@ -10,9 +10,11 @@
     </div>
 
     <div class="form-group">
-      <label for="day">Day of week</label>
-      <input type="text" class="form-control" id="day" required
-             [(ngModel)]="day" name="day">
+      <label for="day">Day of the week</label>
+      <select class="form-control" id="day" required
+              [(ngModel)]="day" name="day">
+        <option *ngFor="let pow of day" [value]="pow">{{pow}}</option>
+      </select>
     </div>
 
     <div class="form-group">

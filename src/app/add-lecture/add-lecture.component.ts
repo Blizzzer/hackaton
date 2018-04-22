@@ -11,7 +11,7 @@ import {Location} from "@angular/common";
 export class AddLectureComponent implements OnInit {
   public lectureToSend: LectureToSend;
   public name: string;
-  public day: string;
+  public day = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
   public startHour: number;
   public finishHour: number;
 
