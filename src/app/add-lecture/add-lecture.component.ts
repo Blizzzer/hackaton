@@ -11,7 +11,8 @@ import {Location} from "@angular/common";
 export class AddLectureComponent implements OnInit {
   public lectureToSend: LectureToSend;
   public name: string;
-  public day = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
+  public days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
+  public day: string;
   public startHour: number;
   public finishHour: number;
 
@@ -25,7 +26,7 @@ export class AddLectureComponent implements OnInit {
   ngOnInit() {
   }
   goAdd(): void {
-    this.lectureToSend = new LectureToSend(this.name,this.day,this.startHour,this.finishHour);
+    this.lectureToSend = new LectureToSend(this.name, this.day, this.startHour, this.finishHour);
     console.log(this.lectureToSend);
     this._dataService.postLecture(this.lectureToSend, 'lectures').then(() => location);
     window.location.reload();
