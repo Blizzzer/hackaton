@@ -16,9 +16,11 @@ export class SendQuestionListComponent implements OnInit {
   public lectureID: number;
   public selectedQuestionId: number;
   public statistic: Statistic;
+  public percent: number[];
   public answersStatistics: AnswerStatisticResponse[];
   constructor(private route: ActivatedRoute, private _dataService: DataService) {
     this.answersStatistics = new Array(4);
+    this.percent = new Array(4);
   }
   ngOnInit() {
     this.getLecture();
@@ -36,7 +38,7 @@ export class SendQuestionListComponent implements OnInit {
     this._dataService
       .getAll('questions/' + this.selectedQuestionId + '/statistics')
       .subscribe((data: Statistic) => {this.statistic = data;
-        this.answersStatistics = data.answersStatistics
+        this.answersStatistics = data.answersStatistics;
       });
   }
 }
