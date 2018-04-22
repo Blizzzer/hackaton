@@ -1,14 +1,19 @@
-<p>
-  question-list works!
-</p>
+<div class="jumbotron">
 <ul class="questions">
-  <li *ngFor="let question of questions">
-    <a>
+  <div *ngFor="let question of questions">
+    <div class="alert alert-primary">
     <span class="badge">{{question.content}}</span>
-    </a>
-    <button class="send" title="send question"
-            (click)="send(question.id)">Send</button>
-    <button class="delete" title="delete question"
-            (click)="delete(question.id)">x</button>
-  </li>
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-outline-primary" (click)="send(question.id)"
+                     [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      Publish
+    </button>
+    <button type="button" class="btn btn-outline-primary" (click)="delete(question.id)"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      Delete
+    </button>
+    </div>
+    </div>
+  </div>
 </ul>
+</div>

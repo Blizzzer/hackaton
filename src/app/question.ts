@@ -9,7 +9,7 @@ export class Question {
     this.text = text;
     this.isPublished = isPublished;
     this.lectureId = lectureId;
-    this.answers = new Array(4);
+        this.answers = new Array(4);
     this.answers[0] = new Answer(firstAnswer,0);
     this.answers[1] = new Answer(secondAnswer,1);
     this.answers[2] = new Answer(thirdAnswer,2);

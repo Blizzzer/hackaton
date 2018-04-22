@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lectures.component.css']
 })
 export class LecturesComponent implements OnInit {
-
+  public isCollapsed = true;
   constructor() { }
 
   ngOnInit() {

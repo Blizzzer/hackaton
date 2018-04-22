@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-question',
@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-
-  constructor() { }
+  public isCollapsed = true;
+  constructor(private location: Location) { }
 
   ngOnInit() {
 
   }
-
+  goBack(): void {
+    this.location.back();
+  }
 }

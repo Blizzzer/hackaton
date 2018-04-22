@@ -38,7 +38,10 @@ export class SendQuestionListComponent implements OnInit {
     this._dataService
       .getAll('questions/' + this.selectedQuestionId + '/statistics')
       .subscribe((data: Statistic) => {this.statistic = data;
-        this.answersStatistics = data.answersStatistics;
+        this.answersStatistics = data.answersStatistics; this.answersStatistics[0].percentOfAnswers = this.answersStatistics[0].numberOfAnswers/this.statistic.answersCount*100;
+        this.answersStatistics[1].percentOfAnswers = this.answersStatistics[1].numberOfAnswers/this.statistic.answersCount*100;
+        this.answersStatistics[2].percentOfAnswers = this.answersStatistics[2].numberOfAnswers/this.statistic.answersCount*100;
+        this.answersStatistics[3].percentOfAnswers = this.answersStatistics[3].numberOfAnswers/this.statistic.answersCount*100;
       });
   }
 }

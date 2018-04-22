@@ -28,6 +28,7 @@ export class AddQuestionComponent implements OnInit {
     this.question = new Question(this.text, 0,this.lectureId,this.firstAnswer,this.secondAnswer,this.thirdAnswer, this.fourthAnswer)
     console.log(this.question);
     this._dataService.postQuestion(this.question, 'questions').then(() => location);
+    window.location.reload()
   }
   goBack(): void {
     this.location.back();

@@ -1,41 +1,39 @@
-<p>
-  add-lecture works!
-</p>
-<div>
+
+<div class="input-group mb-3">
 
 
   <form name = "LectureForm">
     <div class="form-group">
-      <label for="name">Nazwa wykładu</label>
+      <label for="name">Lecture name</label>
       <input type="text" class="form-control" id="name" required
              [(ngModel)]="name" name="name">
     </div>
 
     <div class="form-group">
-      <label for="day">Dzień tygodnia</label>
+      <label for="day">Day of week</label>
       <input type="text" class="form-control" id="day" required
              [(ngModel)]="day" name="day">
     </div>
 
     <div class="form-group">
-      <label for="startHour">Godzina początkowa wykładu</label>
+      <label for="startHour">Start hour</label>
       <input type="text" class="form-control" id="startHour" required
              [(ngModel)]="startHour" name="startHour">
     </div>
 
     <div class="form-group">
-      <label for="finishHour">Godzina końca wykładu</label>
+      <label for="finishHour">End hour</label>
       <input type="text" class="form-control" id="finishHour" required
              [(ngModel)]="finishHour" name="finishHour">
     </div>
-
-    <button (click)="goAdd()">Dodaj wyklad</button>
+    <button type="button" class="btn btn-outline-primary  btn-lg" (click)="goAdd()"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      Add lecture
+    </button>
   </form>
 
 
 
 </div>
 
-
 <hr>
-<button (click)="goBack()">Back</button>

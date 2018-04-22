@@ -38,11 +38,13 @@ export class QuestionListComponent implements OnInit {
   delete(id: number) {
     console.log('questions/' + id);
     this._dataService.deleteQuestion('questions/' + id)
+    window.location.reload()
   }
 
   send(id: number) {
     console.log('questions/' + id + '/publish');
     this._dataService.sendQuestion('questions/' + id + '/publish');
+    window.location.reload()
   }
 
 }

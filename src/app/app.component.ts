@@ -9,7 +9,7 @@ import {DataService} from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Best QUIZ by Code KNAB';
   constructor() {
   }
   ngOnInit() {

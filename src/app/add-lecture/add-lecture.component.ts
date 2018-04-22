@@ -28,6 +28,7 @@ export class AddLectureComponent implements OnInit {
     this.lectureToSend = new LectureToSend(this.name,this.day,this.startHour,this.finishHour);
     console.log(this.lectureToSend);
     this._dataService.postLecture(this.lectureToSend, 'lectures').then(() => location);
+    window.location.reload();
   }
   goBack(): void {
     this.location.back();

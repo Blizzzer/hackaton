@@ -1,5 +1,15 @@
 <p>
-  lectures works!
+  <button type="button" class="btn btn-outline-primary btn-lg" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Add
+  </button>
 </p>
-<app-add-lecture></app-add-lecture>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      <app-add-lecture></app-add-lecture>
+    </div>
+  </div>
+</div>
+
 <app-lectures-list></app-lectures-list>
