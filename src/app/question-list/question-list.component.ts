@@ -15,10 +15,9 @@ import {AnswerStatisticResponse} from "../answerStatisticResponse";
 export class QuestionListComponent implements OnInit {
   public questions: DownloadedQuestion[];
   public lectureID: number;
-  public selectedQuestionId: number;
-  public statistic: Statistic;
-  public answersStatistics: AnswerStatisticResponse[];
+
   constructor(private route: ActivatedRoute, private _dataService: DataService) {
+
   }
 
 
@@ -45,11 +44,5 @@ export class QuestionListComponent implements OnInit {
     console.log('questions/' + id + '/publish');
     this._dataService.sendQuestion('questions/' + id + '/publish');
   }
-  onSelect(question: DownloadedQuestion): void {
-    this.selectedQuestionId = question.id;
-    this._dataService
-      .getAll<Statistic>('questions/' + this.selectedQuestionId + '/statistics')
-      .subscribe((data: Statistic) => this.statistic = data);
-    this.answersStatistics = this.statistic.answersStatistics;
-  }
+
 }

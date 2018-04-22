@@ -8,6 +8,7 @@ import {RequestOptions} from "@angular/http";
 import {Lecture} from "./lecture";
 import {Question} from "./question";
 import {DownloadedQuestion} from "./downloaded-question";
+import {Statistic} from "./statistic";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,6 +23,9 @@ export class DataService {
 
   public getAll<Answer>(urlPlace: string): Observable<Answer> {
     return this.http.get<Answer>(this.actionUrl + urlPlace);
+  }
+  public getStatistics(urlPlace: string, statistic: Statistic): Promise<Statistic> {
+    return this.http.get<Statistic>(this.actionUrl + urlPlace).toPromise();
   }
   public postLecture(lectureToSend: LectureToSend, urlPlace: string): Promise<LectureToSend> {
     console.log(JSON.stringify(lectureToSend));

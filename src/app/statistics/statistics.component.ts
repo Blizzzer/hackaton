@@ -16,7 +16,7 @@ export class StatisticsComponent implements OnInit {
   constructor(private _dataService: DataService, private _questionList: QuestionListComponent) { }
 
   ngOnInit() {
-    this.question = this._questionList.selectedQuestion;
+
     this._dataService
       .getAll<Statistic>('questions/' + this.question.id + '/statistics')
       .subscribe((data: Statistic) => this.statistic = data);
