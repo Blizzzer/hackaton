@@ -1,8 +1,9 @@
 <div class="jumbotron">
 <ul class="questions">
+  <div><h2>Pending Questions</h2></div>
   <div *ngFor="let question of questions">
     <div class="alert alert-primary">
-    <span class="badge">{{question.content}}</span>
+    <span class="badge" style="font-size:medium; white-space: normal ">{{question.content}}</span>
     <div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-outline-primary" (click)="send(question.id)"
                      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">

@@ -1,14 +1,14 @@
 
-<p>
-  <button type="button" class="btn btn-outline-primary  btn-lg" (click)="isCollapsed = !isCollapsed"
+
+  <div class="container"> <button type="button" class="btn btn-outline-primary  btn-lg" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-    Add
+    Add Question
   </button>
-  <button type="button" class="btn btn-outline-primary  btn-lg" (click)="goBack()"
+<button type="button" class="btn btn-outline-primary  btn-lg" (click)="goBack()"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
     Back
-  </button>
-</p>
+</button></div>
+
 <div id="collapseExample" [ngbCollapse]="isCollapsed">
   <div class="card">
     <div class="card-body">
@@ -16,8 +16,9 @@
     </div>
   </div>
 </div>
-<app-send-question-list></app-send-question-list>
 <app-question-list></app-question-list>
+<app-send-question-list></app-send-question-list>
+
 
 
 

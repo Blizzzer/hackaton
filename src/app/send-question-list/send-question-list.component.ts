@@ -44,4 +44,11 @@ export class SendQuestionListComponent implements OnInit {
         this.answersStatistics[3].percentOfAnswers = this.answersStatistics[3].numberOfAnswers/this.statistic.answersCount*100;
       });
   }
+  refresh(): void{
+    this._dataService
+      .getAll('questions/' + this.selectedQuestionId + '/statistics')
+      .subscribe((data: Statistic) => {this.statistic = data;
+        this.answersStatistics = data.answersStatistics;
+      });
+  }
 }

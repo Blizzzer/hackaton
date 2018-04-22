@@ -1,26 +1,45 @@
-<div *ngIf="statistic" class="jumbotron">
-  <div class="alert alert-primary" style="text-align:center"><h2>{{ statistic.text | uppercase }}</h2></div>
-  <div class="alert alert-secondary" role="alert" style="text-align:center"><b>NumberOfAnswers: </b>{{statistic.answersCount}}</div>
+<div class="row">
 
+  <div class="col-md-6">
+    <div class="jumbotron">
+      <div><h2>Published Questions</h2></div>
 
-  <ul class="answersStatistics">
-    <div *ngFor="let answersStatistic of answersStatistics">
+      <div *ngFor="let question of questions"(click)="onSelect(question)">
 
-      <div  class="alert alert-info" role="alert" style="text-align:center">
-        <a><b>Answer</b>  {{answersStatistic.text}}</a> <b>Number of students:</b> {{answersStatistic.numberOfAnswers}}</div>
+        <div class="btn btn-outline-primary btn-block" >
+          <span class="badge" style="font-size: medium;  white-space: normal">{{question.content}}</span>
+        </div>
+      </div>
+
     </div>
-  </ul>
-</div>
 
-<div class="jumbotron">
+  </div>
 
-  <div *ngFor="let question of questions"(click)="onSelect(question)">
+  <div class="col-md-6">
+    <div *ngIf="statistic" class="jumbotron">
+      <div class="alert alert-primary" style="text-align:center"><h2>{{ statistic.text | uppercase }}</h2></div>
+      <div class="alert alert-secondary" role="alert" style="text-align:center"><b>Answers total: </b>{{statistic.answersCount}}
+        <b style="padding-left: 80px"><button type="button"  class="btn btn-outline-primary" (click)="refresh()"
+                                              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          Refresh
+        </button></b>
+      </div>
 
-    <div class="btn btn-outline-primary" >
-      <span class="badge">{{question.content}}</span>
+
+      <ul class="answersStatistics">
+        <div *ngFor="let answersStatistic of answersStatistics">
+
+          <div  class="alert alert-info" role="alert" style="text-align:center">
+            <a>  <b>{{answersStatistic.text | uppercase}}</b></a> <b>Number of answers:</b> {{answersStatistic.numberOfAnswers}}
+            <p style="padding-top: 10px"><ngb-progressbar [animated]="true" [striped]="true" [showValue]="false" type="info" [value]="answersStatistic.numberOfAnswers" [max]="statistic.answersCount"></ngb-progressbar></p></div>
+        </div>
+      </ul>
     </div>
   </div>
 
 </div>
+
+
+
 
 

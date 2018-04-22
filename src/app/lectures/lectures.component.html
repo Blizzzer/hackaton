@@ -1,7 +1,7 @@
 <p>
   <button type="button" class="btn btn-outline-primary btn-lg" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-    Add
+    Add Lecture
   </button>
 </p>
 <div id="collapseExample" [ngbCollapse]="isCollapsed">
@@ -11,5 +11,5 @@
     </div>
   </div>
 </div>
-
+<div class="jumbotron" style="text-align: center"><h2>LECTURES</h2></div>
 <app-lectures-list></app-lectures-list>
